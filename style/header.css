@@ -1,0 +1,155 @@
+@import url(../styles.css);
+
+.cabecalho__menu-hamburguer {
+  width: 48px;
+  height: 48px;
+  background-image: url('../img/Menu.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+}
+
+.cabecalho {
+  background-color: var(--branco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container__imagem {
+  padding: 0.6em;
+}
+
+.lista-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 60vw;
+}
+
+.container__botao:checked ~ .lista-menu {
+  display: block;
+}
+
+.lista-menu__titulo,
+.lista-menu__item {
+  padding: 1em;
+  background-color: var(--branco);
+}
+
+.lista-menu__item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.lista-menu__titulo p {
+  color: var(--laranja);
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.lista-menu__link {
+  background: var(--azul-degrade);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.container__botao {
+  display: none;
+}
+
+/* Desativando o display dos lelementos que não pertencem a 
+resolução < x1024 */
+
+.container__titulo {
+  display: none;
+}
+
+.opcoes {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .container__titulo--negrito {
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--azul-escuro);
+  }
+  .container__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--azul-escuro);
+    display: block;
+  }
+  .opcoes {
+    display: flex;
+  }
+  .opcoes__item{
+    padding: 1em;
+    color: var(--preto);
+    font-family: var(--fonte-principal);
+  }
+  .opcoes__link {
+    text-decoration: none;
+    color: var(--preto);
+    font-family: var(--fonte-principal);
+  }
+
+  .container__imagem-transparente{
+    display: none;
+  }
+
+  .container--transparente{
+    display: none;
+  }
+
+  .opcoes__botao:checked ~ .lista-menu {
+    display: block;
+    width: 40%;
+  }
+
+  .opcoes__botao{
+    display: none;
+  }
+}
+
+.container__texto {
+  display: none;
+}
+
+@media screen and (min-width: 1728px) {
+  .container__link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--preto);
+    font-family: var(--fonte-principal);
+    font-size: 20px;
+    padding: 1em;
+  }
+
+  .cabecalho{
+    padding: 0 3em;
+  }
+
+  .opcoes{
+    margin-left: 2em;
+    margin-right: auto;
+  }
+
+  .container__texto{
+    display: block;
+  }
+  
+}
